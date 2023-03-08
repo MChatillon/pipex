@@ -27,7 +27,7 @@ $(NAME):	$(FT_PRINTF) $(OBJS)
 
 clean:
 			$(RM)	$(OBJS)
-			make clean -C -ft_printf
+			make clean -C ft_printf
 
 fclean:	clean
 			$(RM)	$(NAME) $(OBJS_DIR)
