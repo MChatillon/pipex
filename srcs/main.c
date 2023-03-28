@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   pipex.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdoroana <mdoroana@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/16 17:04:14 by mdoroana          #+#    #+#             */
-/*   Updated: 2023/03/24 15:04:58 by mdoroana         ###   ########.fr       */
+/*   Created: 2023/03/08 15:02:12 by mdoroana          #+#    #+#             */
+/*   Updated: 2023/03/28 16:07:32 by mdoroana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	main(int ac, char **av, char **envp)
 {
-	size_t	i;
-
-	i = 0;
-	if (n == 0)
-		return (0);
-	while (s1[i] != '\0' && s2[i] != '\0' && i < (n - 1) && s1[i] == s2[i])
-		i++;
-	return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
+	if (ac != 5)
+		exit_prog(1, "Wrong number of arguments");
+	parse(av, envp);
+	return (0);
 }
