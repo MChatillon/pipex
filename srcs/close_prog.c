@@ -6,7 +6,7 @@
 /*   By: mdoroana <mdoroana@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 15:13:23 by mdoroana          #+#    #+#             */
-/*   Updated: 2023/03/08 15:16:38 by mdoroana         ###   ########.fr       */
+/*   Updated: 2023/03/24 17:11:09 by mdoroana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,4 +16,5 @@ void	exit_prog(int status, char *s)
 {
 	if (status)
 		ft_prinft("%s", s);
+	exit(status);
 }
