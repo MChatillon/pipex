@@ -6,7 +6,7 @@
 /*   By: mdoroana <mdoroana@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 17:04:14 by mdoroana          #+#    #+#             */
-/*   Updated: 2023/03/24 15:04:58 by mdoroana         ###   ########.fr       */
+/*   Updated: 2023/03/28 17:46:23 by mdoroana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,11 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	while (s1[i] != '\0' && s2[i] != '\0' && i < (n - 1) && s1[i] == s2[i])
 		i++;
 	return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
+}
+
+t_pipex	*px(void)
+{
+	static t_pipex	pipex;
+
+	return (&pipex);
 }
