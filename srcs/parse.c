@@ -6,7 +6,7 @@
 /*   By: mdoroana <mdoroana@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 15:25:36 by mdoroana          #+#    #+#             */
-/*   Updated: 2023/03/16 17:41:18 by mdoroana         ###   ########.fr       */
+/*   Updated: 2023/03/24 17:35:06 by mdoroana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,20 @@ char	*get_path(char **envp)
 		if (!strncmp(envp[i], "PATH=", 5))
 			return (envp[i] + 5);
 	return (NULL);
+}
+
+void	setcmd(char *argv, char *path)
+{
+	char	**cmd;
+	char	*temp;
+	t_pipex	*node;
+
+	if (!argv[0])
+		exit_prog("Empty cmd", 1);
+	cmd = ft_split(NULL, argv, 0);
+	if (!cmd)
+		exit_prog("Malloc failed", 1);
+	node = 
 }
 
 void	parse(char **av, char **envp)
@@ -38,15 +52,5 @@ void	parse(char **av, char **envp)
 	}
 	if (!path)
 		exit_prog(1, "Incorrect path");
-
-}
-
-int	ft_strlen(char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s)
-		i++;
-	return (i);
+	setcmd(argv[2], path)
 }
