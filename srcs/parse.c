@@ -6,7 +6,7 @@
 /*   By: mdoroana <mdoroana@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 15:25:36 by mdoroana          #+#    #+#             */
-/*   Updated: 2023/03/24 17:35:06 by mdoroana         ###   ########.fr       */
+/*   Updated: 2023/03/28 17:34:35 by mdoroana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,9 @@ void	setcmd(char *argv, char *path)
 	cmd = ft_split(NULL, argv, 0);
 	if (!cmd)
 		exit_prog("Malloc failed", 1);
-	node = 
+	node = list_add_last(&pipe()->cmd,new_list(cmd));
+	if (!node)
+		exit_prog(1, "Malloc failed");
 }
 
 void	parse(char **av, char **envp)
@@ -52,5 +54,12 @@ void	parse(char **av, char **envp)
 	}
 	if (!path)
 		exit_prog(1, "Incorrect path");
-	setcmd(argv[2], path)
+	setcmd(av[2], path);
+	(px())->infile = open(av[1], O_RDONLY);
+	if (px()->infile == -1)
+		exit_prog(1, "Invalid infile");
+	setcmd(av[3], path);
+	(px())->outfile = open(av[4], O_CREAT | O_WRONLY, O644);
+	if (px()->outfile == -1)
+		exit_prog(1, "Invalid outfile");
 }
