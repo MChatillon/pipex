@@ -1,5 +1,10 @@
-SRCS		=	$(SRCS_DIR)/pipex.c \
+SRCS		=	$(SRCS_DIR)/main.c \
 				$(SRCS_DIR)/close_prog.c \
+				$(SRCS_DIR)/ft_split.c \
+				$(SRCS_DIR)/list_utils.c \
+				$(SRCS_DIR)/parse.c \
+				$(SRCS_DIR)/utils.c \
+
 
 SRCS_DIR	= srcs
 
